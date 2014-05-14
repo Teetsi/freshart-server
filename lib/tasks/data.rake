@@ -47,6 +47,7 @@ namespace :data do
       title = content.css('.event-name').first.text.strip
       venue = content.css('h3 span').first.text.strip
       link = content.css('a').first.at_xpath('@href')
+      description = content.css('p').first.text.strip
 
       exhibition = Exhibition.find_by(title: title, venue: venue)
 
@@ -55,7 +56,10 @@ namespace :data do
         params = fetch_detailed_information("http://www.artlyst.com#{link}")
         params['title'] = title
         params['venue'] = venue
+        params['description'] = description
         exhibition = Exhibition.create(params)
+
+        puts exhibition
       end
 
       # not yet added
