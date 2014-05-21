@@ -18,7 +18,7 @@ set :rails_env, "production"
 server "freshart.cloudapp.net", user: "freshartuser", roles: [:app, :web, :db]
 
 # Default value for :format is :pretty
-# set :format, :pretty
+set :format, :pretty
 
 # Default value for :log_level is :debug
 # set :log_level, :debug
@@ -36,7 +36,7 @@ server "freshart.cloudapp.net", user: "freshartuser", roles: [:app, :web, :db]
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
 
