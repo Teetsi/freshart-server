@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512214259) do
+ActiveRecord::Schema.define(version: 20140524194741) do
 
   create_table "exhibitions", force: true do |t|
-    t.string   "title"
+    t.text     "title"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string   "preview_image"
-    t.string   "venue"
-    t.string   "address"
-    t.string   "web_url"
+    t.text     "preview_image"
+    t.text     "venue"
+    t.text     "address"
+    t.text     "web_url"
     t.string   "tel"
     t.string   "cost"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "times"
