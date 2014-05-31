@@ -39,9 +39,7 @@ namespace :data do
     unless list
       list = List.create({ title: 'featured-exhibitions' })
     end
-    #url = "./Featuredevents.html"
     doc = Nokogiri::HTML(open(url))
-    #doc = Nokogiri::HTML(File.open(url))
     doc.css('.featuredevents #featuredevents-listings').each do |e|
       content = e.css('.featured-listings-content')
       title = content.css('.event-name').first.text.strip
